@@ -15,9 +15,9 @@ target_link_libraries(main_exec_lambdamode PRIVATE
         mathlibcc++
         mathlibc++
 )
-add_executable(main_exec_const_char_mode main.cpp)
+add_executable(main_exec_const_char_ptr_mode main.cpp)
 add_executable(main_exec_std_string_mode main.cpp)
 target_compile_definitions(main_exec PRIVATE NUMBER_MODE)
 target_compile_definitions(main_exec_lambdamode PRIVATE NUMBER_MODE LAMBDA_MODE)
-target_compile_definitions(main_exec_const_char_mode PRIVATE CONST_CHAR_MODE)
+target_compile_definitions(main_exec_const_char_ptr_mode PRIVATE CONST_CHAR_PTR_MODE)
 target_compile_definitions(main_exec_std_string_mode PRIVATE STD_STRING_MODE)

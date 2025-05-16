@@ -48,7 +48,7 @@ int main(int argc, char** argv) {
     return 0;
 }
 #endif
-#ifdef CONST_CHAR_MODE
+#ifdef CONST_CHAR_PTR_MODE
 int main(int argc, char** argv) {
     const char* a = "Xin chào thế giới!";
     std::cout << a << std::endl;
