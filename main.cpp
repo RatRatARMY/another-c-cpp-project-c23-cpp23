@@ -63,3 +63,42 @@ int main(int argc, char** argv) {
     return 0;
 }
 #endif
+#ifdef CHAR_LIST_MODE
+int main(int argc, char** argv) {
+    char str[] = "Xin chào thế giới!";
+    std::cout << str << std::endl;
+    return 0;
+}
+#endif
+#ifdef ANOTHER_NUMBER_MODE
+#include <bitset>
+int main(int argc, char** argv) {
+    std::cout << std::bitset<sizeof(int)*8>(12345678) << std::endl;
+    std::cout << std::bitset<sizeof(unsigned long long)*8>(98765432101234567ull) << std::endl;
+    return 0;
+}
+#endif
+#ifdef CONSTEXPR_MODE
+#include <bitset>
+template<typename T>
+constexpr size_t bitof() {
+    return sizeof(T)*8;
+}
+int main(int argc, char** argv) {
+    std::cout << std::bitset<bitof<unsigned long long>()>(1234567890987654321ull) << std::endl;
+    std::cout << compl std::bitset<bitof<unsigned long long>()>(1234567890987654321ull) << std::endl;
+    std::cout << 1234567890987654321ull << std::endl;
+    std::cout << compl 1234567890987654321ull << std::endl;
+    return 0;
+}
+#endif
+#ifdef CHECK_ARGV_ARGC_MODE
+int main(int argc, char** argv) {
+    if (argv[argc] != nullptr) {
+        std::cerr << "something went wrong, sorry :((((" << std::endl;
+    }
+    for (int i = 0; i < argc; i++) {
+        std::cout << argv[i] << std::endl;
+    }
+}
+#endif
